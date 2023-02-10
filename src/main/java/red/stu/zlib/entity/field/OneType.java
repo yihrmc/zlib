@@ -1,7 +1,7 @@
 package red.stu.zlib.entity.field;
 
-public interface OneType {
+public interface OneType<E> {
 
-    <T> T type();
+    <T extends E> T type();
 
 }

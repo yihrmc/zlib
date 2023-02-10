@@ -7,11 +7,11 @@ import red.stu.zlib.entity.field.TypeAny;
 
 public final class ZSqlType {
 
-    public static SqlJoinType.P1<OneType> joinOne(Class<? extends ZEntity> entityType) {
+    public static SqlJoinType.P1<OneType<ZEntity>> joinOne(Class<? extends ZEntity> entityType) {
         return TypeAny.any();
     }
 
-    public static SqlJoinType.P1<ListType> joinList(Class<? extends ZEntity> entityType) {
+    public static SqlJoinType.P1<ListType<ZEntity>> joinList(Class<? extends ZEntity> entityType) {
         return TypeAny.any();
     }
 

@@ -45,7 +45,7 @@ public interface ZEntity {
      *          &#047;*
      *          * {&#064;link user#id()} = {&#064;link #fieldName1()}
      *          **&#047;
-     *          &#064;ZEntity.join(mainNotNull=true, joinNotNull=false)
+     *          &#064;ZEntity.Join(mainNotNull=true, joinNotNull=false)
      *          interface user extends ZUser {
      *          }
      *
@@ -55,7 +55,7 @@ public interface ZEntity {
      */
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.SOURCE)
-    @interface join {
+    @interface Join {
         /**
          * @return 主表的字段值是否允许为空
          */
@@ -84,7 +84,7 @@ public interface ZEntity {
      *          *    {&#064;link #id(Long)} = {&#064;link #id()}
      *          * &#060;/if&#062;
      *          **&#047;
-     *          &#064;ZEntity.where()
+     *          &#064;ZEntity.Where()
      *          interface where1 {
      *          }
      *
@@ -94,7 +94,7 @@ public interface ZEntity {
      */
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.SOURCE)
-    @interface where {
+    @interface Where {
     }
 
 }

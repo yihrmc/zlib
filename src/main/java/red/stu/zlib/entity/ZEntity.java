@@ -103,16 +103,16 @@ public interface ZEntity {
     }
 
 
-    @Target(ElementType.TYPE)
+    @Target(ElementType.METHOD)
     @Retention(RetentionPolicy.SOURCE)
     @interface SelectFields {
-        SelectField[] values();
+        SelectField[] value();
     }
 
-    @Target(ElementType.TYPE)
+    @Target(ElementType.METHOD)
     @Retention(RetentionPolicy.SOURCE)
     @interface SelectField {
-        Class<? extends SelectMapper> mapper();
+        Class<?> mapper();
         Class<? extends ZValidator<?, ?>>[] validator();
     }
 

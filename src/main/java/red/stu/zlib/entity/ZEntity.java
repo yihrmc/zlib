@@ -124,7 +124,7 @@ public interface ZEntity {
     @Target(ElementType.METHOD)
     @Retention(RetentionPolicy.SOURCE)
     @interface Validator {
-        Class<? extends ZValidator<?, ?>>[] value();
+        Class<? extends ZValidator<?>>[] value();
 
         Class<?>[] mappers() default {};
     }

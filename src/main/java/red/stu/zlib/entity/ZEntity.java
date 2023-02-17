@@ -36,6 +36,11 @@ import java.lang.annotation.Target;
 public interface ZEntity {
 
     /**
+     * 启用的Getter和Setter的方法
+     */
+    void enableGetterSetterMethods();
+
+    /**
      * 关联其它实体类
      * <p>示例代码：</p>
      * <pre class="code">
@@ -95,6 +100,25 @@ public interface ZEntity {
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.SOURCE)
     @interface Where {
+    }
+
+
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.SOURCE)
+    @interface SelectFields {
+        SelectField[] values();
+    }
+
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.SOURCE)
+    @interface SelectField {
+        Class<? extends SelectMapper> mapper();
+        Class<? extends ZValidator<?, ?>>[] validator();
+    }
+
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.SOURCE)
+    @interface SelectMapper {
     }
 
 }

@@ -119,6 +119,13 @@ public interface ZEntity {
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.SOURCE)
     @interface SelectMapper {
+
+        Type returnType();
+
+        enum Type {
+            ONE,
+            LIST
+        }
     }
 
 }

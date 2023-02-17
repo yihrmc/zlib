@@ -106,7 +106,7 @@ public interface ZEntity {
     @Target(ElementType.METHOD)
     @Retention(RetentionPolicy.SOURCE)
     @interface FieldMappers {
-        Class<?> mappers();
+        Class<?>[] mappers();
     }
 
     @Target(ElementType.TYPE)
@@ -119,6 +119,14 @@ public interface ZEntity {
             ONE,
             LIST
         }
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.SOURCE)
+    @interface Validator {
+        Class<? extends ZValidator<?, ?>>[] value();
+
+        Class<?>[] mappers() default {};
     }
 
 }
